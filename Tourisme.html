@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizon Voyages - Découvrez le monde</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="short icon" href="Capture d'écran 2025-10-25 151510.png" />
+    <style>
+      :root {
+        --primary-color: #0056b3;
+        --secondary-color: #ffcc00;
+        --accent-color: #e67e22;
+        --dark-color: #333;
+        --light-color: #f8f9fa;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .navbar {
+        background-color: var(--primary-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 24px;
+        color: white !important;
+      }
+
+      .navbar-brand span {
+        color: white;
+      }
+
+      /* Header */
+      header {
+        background-color: var(--primary-color);
+        padding: 15px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      .logo i {
+        margin-right: 10px;
+        font-size: 28px;
+        color: var(--secondary-color);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 30px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: var(--secondary-color);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1580502304784-8985b7eb7260?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 180px 0 100px;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: #333;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #e6b400;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Tabs */
+      .tabs {
+        display: flex;
+        justify-content: center;
+        margin: 50px 0 30px;
+        flex-wrap: wrap;
+      }
+
+      .tab-btn {
+        background-color: #f4f4f4;
+        border: none;
+        padding: 15px 30px;
+        margin: 0 10px;
+        border-radius: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+      }
+
+      .tab-btn i {
+        margin-right: 10px;
+        font-size: 20px;
+      }
+
+      .tab-btn.active {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      /* Section Titles */
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary-color);
+      }
+
+      /* Service Cards */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+
+      .service-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-img {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .service-content {
+        padding: 20px;
+      }
+
+      .service-content h3 {
+        margin-bottom: 15px;
+        color: var(--primary-color);
+      }
+
+      .service-content p {
+        margin-bottom: 20px;
+        color: #666;
+      }
+
+      /* Features */
+      .features {
+        background-color: #f9f9f9;
+        padding: 80px 0;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .feature {
+        text-align: center;
+        padding: 30px 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+      }
+
+      .feature:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature i {
+        font-size: 40px;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .feature h3 {
+        margin-bottom: 15px;
+        color: var(--dark-color);
+      }
+
+      .feature p {
+        color: #666;
+      }
+
+      /* Testimonials */
+      .testimonials {
+        padding: 80px 0;
+        background: linear-gradient(to bottom, #f9f9f9, white);
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+
+      .testimonial {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .testimonial-author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+
+      .author-info h4 {
+        color: var(--primary-color);
+        margin-bottom: 5px;
+      }
+
+      /* Contact */
+      .contact {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+      }
+
+      .contact-info h2 {
+        margin-bottom: 20px;
+        color: var(--primary-color);
+      }
+
+      .contact-info p {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+
+      .contact-info i {
+        margin-right: 10px;
+        color: var(--primary-color);
+        width: 20px;
+      }
+
+      .contact-form h3 {
+        margin-bottom: 20px;
+        color: var(--primary-color);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: inherit;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 20px;
+        color: var(--secondary-color);
+      }
+
+      .footer-section p,
+      .footer-section a {
+        margin-bottom: 10px;
+        color: #ccc;
+        display: block;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: var(--secondary-color);
+      }
+
+      .social-links {
+        display: flex;
+        margin-top: 15px;
+      }
+
+      .social-links a {
+        margin-right: 15px;
+        font-size: 20px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid #444;
+        color: #ccc;
+      }
+
+      /* Newsletter */
+      .newsletter {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .newsletter h2 {
+        margin-bottom: 20px;
+      }
+
+      .newsletter p {
+        max-width: 600px;
+        margin: 0 auto 30px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .newsletter-form input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 30px 0 0 30px;
+      }
+
+      .newsletter-form button {
+        background-color: var(--secondary-color);
+        color: #333;
+        border: none;
+        padding: 0 25px;
+        border-radius: 0 30px 30px 0;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        nav ul {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: var(--primary-color);
+          padding: 20px;
+        }
+
+        nav ul.show {
+          display: flex;
+        }
+
+        nav ul li {
+          margin: 10px 0;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .tabs {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .tab-btn {
+          margin: 10px 0;
+          width: 80%;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+        }
+
+        .newsletter-form input {
+          border-radius: 30px;
+          margin-bottom: 10px;
+        }
+
+        .newsletter-form button {
+          border-radius: 30px;
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container nav-container">
+        <div class="logo">
+          <i class="fas fa-globe-americas"></i>
+          <a class="navbar-brand" href="TopTravelSn2.html"
+            ><span>TOP TRAVEL SN</span></a
+          >
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+      <div class="container hero-content">
+        <h1>Explorez la beauté du monde</h1>
+        <p>
+          Découvrez des destinations extraordinaires et vivez des expériences
+          uniques avec nos forfaits de voyage sur mesure.
+        </p>
+        <a href="#destinations" class="btn">Découvrir nos offres</a>
+      </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="container" id="destinations">
+      <h2 class="section-title">Destinations Populaires</h2>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="europe">
+          <i class="fas fa-archway"></i> Europe
+        </button>
+        <button class="tab-btn" data-tab="asie">
+          <i class="fas fa-umbrella-beach"></i> Asie
+        </button>
+        <button class="tab-btn" data-tab="amerique">
+          <i class="fas fa-mountain"></i> Amérique
+        </button>
+        <button class="tab-btn" data-tab="afrique">
+          <i class="fas fa-globe-africa"></i> Afrique
+        </button>
+      </div>
+
+      <div class="tab-content active" id="europe">
+        <div class="services-grid">
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://media.istockphoto.com/id/1498516775/fr/photo/la-tour-eiffel-%C3%A0-paris-france-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=mvWhEm3nxmDVIFemAmthqdRS7dwzZYiep3rrRohQKjw=');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>Paris, France</h3>
+              <p>
+                Découvrez la ville de l'amour avec ses monuments emblématiques,
+                sa gastronomie et son art.
+              </p>
+              <a href="#contact" class="btn">À partir de 404 400 FCFA</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>Rome, Italie</h3>
+              <p>
+                Immergez-vous dans l'histoire ancienne et savourez la délicieuse
+                cuisine italienne.
+              </p>
+              <a href="#contact" class="btn">À partir de 500 000 FCFA</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>Santorini, Grèce</h3>
+              <p>
+                Profitez des couchers de soleil spectaculaires et des eaux
+                cristallines de la mer Égée.
+              </p>
+              <a href="#contact" class="btn">À partir de 460 000 FCFA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="asie">
+        <div class="services-grid">
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2094&q=80');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>Bali, Indonésie</h3>
+              <p>
+                Détendez-vous sur des plages de sable blanc et découvrez la
+                culture vibrante de l'île des dieux.
+              </p>
+              <a href="#contact" class="btn">À partir de 855 000 FCFA</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2046&q=80');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>Tokyo, Japon</h3>
+              <p>
+                Plongez dans le futur tout en respectant les traditions dans
+                cette mégalopole captivante.
+              </p>
+              <a href="#contact" class="btn">À partir de 990 000 FCFA</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1534008897995-27a23e859048?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>Phuket, Thaïlande</h3>
+              <p>
+                Profitez des plages paradisiaques, des eaux turquoise et de la
+                délicieuse cuisine thaïlandaise.
+              </p>
+              <a href="#contact" class="btn">À partir de 630 000 FCFA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="amerique">
+        <div class="services-grid">
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://media.istockphoto.com/id/1439643582/fr/photo/horizon-de-new-york-et-statue-de-la-libert%C3%A9-au-cr%C3%A9puscule.jpg?s=612x612&w=0&k=20&c=KFamt1rqjcXuKnURZHpq6sVlIJb25HvXRu704P181_M=');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>New York, USA</h3>
+              <p>
+                Découvrez la ville qui ne dort jamais avec ses gratte-ciel
+                iconiques et son énergie unique.
+              </p>
+              <a href="#contact" class="btn">À partir de 860 000 FCFA</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://media.istockphoto.com/id/482785184/fr/photo/vue-a%C3%A9rienne-du-christ-et-botafogo-bay-depuis-langle.jpg?s=612x612&w=0&k=20&c=hAHAyvRUfnJGVQ8-oYN0uCmm-2dCGXfBPlzkS5XAG3U=');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>Rio de Janeiro, Brésil</h3>
+              <p>
+                Vibrez au rythme de la samba et profitez des magnifiques plages
+                de Copacabana et Ipanema.
+              </p>
+              <a href="#contact" class="btn">À partir de 920 000 FCFA</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2090&q=80');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>Pérou - Machu Picchu</h3>
+              <p>
+                Explorez les mysteries de la citadelle inca perchée dans les
+                Andes, joyau archéologique.
+              </p>
+              <a href="#contact" class="btn">À partir de 1 050 000 FCFA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="afrique">
+        <div class="services-grid">
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>Safari au Kenya</h3>
+              <p>
+                Vivez une aventure inoubliable au cœur de la savane africaine et
+                observez les Big Five dans leur habitat naturel.
+              </p>
+              <a href="#contact" class="btn">À partir de 675 000 FCFA</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://media.istockphoto.com/id/1124474292/fr/photo/vue-panoramique-sur-marrakech-marocain.jpg?s=612x612&w=0&k=20&c=V72v024LgdmZCoQcoZ43ecazlbsHsKThemTD0bYqZJM=');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>Marrakech, Maroc</h3>
+              <p>
+                Immergez-vous dans l'atmosphère envoûtante des souks, des palais
+                et des jardins de la ville ocre.
+              </p>
+              <a href="#contact" class="btn">À partir de 360 000 FCFA</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url('https://media.istockphoto.com/id/682284814/fr/photo/vue-a%C3%A9rienne-de-cape-town.jpg?s=612x612&w=0&k=20&c=i4FlcQ_9SCCyotXUoCoT7j8ds66WybfMAXKRlubYI20=');
+              "
+            ></div>
+            <div class="service-content">
+              <h3>Le Cap, Afrique du Sud</h3>
+              <p>
+                Découvrez la beauté spectaculaire de la Montagne de la Table,
+                des vignobles et des plages immaculées.
+              </p>
+              <a href="#contact" class="btn">À partir de 500 000 FCFA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="services">
+      <div class="container">
+        <h2 class="section-title">Pourquoi nous choisir ?</h2>
+
+        <div class="features-grid">
+          <div class="feature">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Sécurité Garantie</h3>
+            <p>
+              Votre sécurité est notre priorité. Tous nos voyages respectent les
+              normes de sécurité les plus strictes.
+            </p>
+          </div>
+
+          <div class="feature">
+            <i class="fas fa-tag"></i>
+            <h3>Meilleur Prix</h3>
+            <p>
+              Nous garantissons les meilleurs prix pour toutes nos destinations.
+              Sinon, nous remboursons la différence.
+            </p>
+          </div>
+
+          <div class="feature">
+            <i class="fas fa-headset"></i>
+            <h3>Support 24/7</h3>
+            <p>
+              Notre équipe est disponible 24h/24 et 7j/7 pour vous assister
+              pendant votre voyage.
+            </p>
+          </div>
+
+          <div class="feature">
+            <i class="fas fa-globe"></i>
+            <h3>Destinations Mondiales</h3>
+            <p>
+              Plus de 500 destinations à travers le monde pour satisfaire toutes
+              vos envies de voyage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="temoignages">
+      <div class="container">
+        <h2 class="section-title">Ce que disent nos voyageurs</h2>
+
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <div class="testimonial-text">
+              "Un voyage extraordinaire en Grèce ! L'organisation était
+              impeccable et les guides locaux étaient très connaisseurs. Je
+              recommande vivement Horizon Voyages."
+            </div>
+            <div class="testimonial-author">
+              <img
+                src="https://randomuser.me/api/portraits/women/65.jpg"
+                alt="Marie L."
+              />
+              <div class="author-info">
+                <h4>Marie L.</h4>
+                <p>Voyage en Grèce</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <div class="testimonial-text">
+              "Mon séjour à Bali était tout simplement magique. Merci à Horizon
+              Voyages pour ces moments inoubliables. Je reviendrai vers vous
+              pour mon prochain voyage !"
+            </div>
+            <div class="testimonial-author">
+              <img
+                src="https://media.istockphoto.com/id/1438969575/fr/photo/un-jeune-%C3%A9tudiant-souriant-portant-des-%C3%A9couteurs-debout-dans-une-salle-de-classe.jpg?s=612x612&w=0&k=20&c=mm9bA66qPBkO23KzVZb_5LY4ixUK2dKbya4K4NmPFrA="
+                alt="Thomas D."
+              />
+              <div class="author-info">
+                <h4>Thomas D.</h4>
+                <p>Séjour à Bali</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <div class="testimonial-text">
+              "Notre safari au Kenya a dépassé toutes nos attentes. Une
+              organisation parfaite et des guides exceptionnels. Une expérience
+              unique que nous n'oublierons jamais."
+            </div>
+            <div class="testimonial-author">
+              <img
+                src="https://media.istockphoto.com/id/1368004438/fr/photo/photo-dun-couple-profitant-dune-journ%C3%A9e-%C3%A0-la-plage.jpg?s=612x612&w=0&k=20&c=ToRvQfm40Df0TlZaQAQRrvdsc3YgG2_H7ruJoj6Cii0="
+                alt="Sophie et Marc"
+              />
+              <div class="author-info">
+                <h4>Sophie et Marc</h4>
+                <p>Safari au Kenya</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contactez-nous</h2>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <h2>Planifions votre prochain voyage ensemble</h2>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Lac Rose - Deux voies
+              Camberene, Dakar, Sénégal
+            </p>
+            <p><i class="fas fa-phone"></i> +221 77 736 82 67 - 78 147 62 62</p>
+            <p><i class="fas fa-envelope"></i> toptravelsn@yahoo.com</p>
+            <p><i class="fas fa-clock"></i> Lun-Ven: 9h-18h | Sam: 10h-16h</p>
+
+            <div class="social-links">
+              <a
+                href="https://www.tiktok.com/@top_travel_sn?_t=ZM-90lpn8DjXtD&_r=1"
+                target="_blank"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/toptravelsn?utm_source=qr&igsh=MTJvYTl5NGFzdmkzeg=="
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://wa.me/221781476262" target="_blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Demande d'information</h3>
+            <form
+              action="mailto:gwalitop@yahoo.com"
+              methode="post"
+              enctype="text/plain"
+            >
+              <div class="form-group">
+                <label for="name">Nom complet</label>
+                <input type="text" id="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="destination">Destination souhaitée</label>
+                <select id="destination">
+                  <option value="">Sélectionnez une destination</option>
+                  <option value="europe">Europe</option>
+                  <option value="asie">Asie</option>
+                  <option value="amerique">Amérique</option>
+                  <option value="afrique">Afrique</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" required></textarea>
+              </div>
+
+              <button type="submit" class="btn">Envoyer la demande</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3>Horizon Voyages</h3>
+            <p>
+              Votre partenaire de confiance pour découvrir le monde depuis 2005.
+              Nous nous engageons à vous offrir des expériences de voyage
+              inoubliables.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Liens Rapides</h3>
+            <a href="#accueil">Accueil</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#services">Services</a>
+            <a href="#temoignages">Témoignages</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Destinations</h3>
+            <a href="#">Europe</a>
+            <a href="#">Asie</a>
+            <a href="#">Amérique</a>
+            <a href="#">Afrique</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Inscrivez-vous pour recevoir nos offres exclusives</p>
+            <form
+              action="mailto:gwalitop@yahoo.com"
+              method="post"
+              enctype="text/plain"
+            >
+              <div class="form-group">
+                <input type="email" placeholder="Votre email" required />
+              </div>
+              <button type="submit" class="btn">S'abonner</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 TOP TRAVEL SN. Tous droits réservés.</p>
+          <div class="legal-links">
+            <a href="" style="color: #7f8c8d"
+              >Conditions Générales d'Utilisation (CGU)</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Script pour les onglets
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabButtons = document.querySelectorAll(".tab-btn");
+
+        tabButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            // Retirer la classe active de tous les boutons et contenus
+            tabButtons.forEach((btn) => btn.classList.remove("active"));
+            document
+              .querySelectorAll(".tab-content")
+              .forEach((content) => content.classList.remove("active"));
+
+            // Ajouter la classe active au bouton cliqué
+            button.classList.add("active");
+
+            // Afficher le contenu correspondant
+            const tabId = button.getAttribute("data-tab");
+            document.getElementById(tabId).classList.add("active");
+          });
+        });
+
+        // Menu mobile
+        const menuButton = document.querySelector(".mobile-menu-btn");
+        const navMenu = document.querySelector("nav ul");
+
+        menuButton.addEventListener("click", () => {
+          navMenu.classList.toggle("show");
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        const navLinks = document.querySelectorAll("nav ul li a");
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            navMenu.classList.remove("show");
+          });
+        });
+
+        // Animation au défilement
+        const animateOnScroll = () => {
+          const elements = document.querySelectorAll(
+            ".feature, .service-card, .testimonial"
+          );
+
+          elements.forEach((element) => {
+            const position = element.getBoundingClientRect();
+
+            // Si l'élément est dans le viewport
+            if (position.top < window.innerHeight - 100) {
+              element.style.opacity = 1;
+              element.style.transform = "translateY(0)";
+            }
+          });
+        };
+
+        // Initialiser les styles pour l'animation
+        document
+          .querySelectorAll(".feature, .service-card, .testimonial")
+          .forEach((element) => {
+            element.style.opacity = 0;
+            element.style.transform = "translateY(20px)";
+            element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          });
+
+        // Écouter l'événement de défilement
+        window.addEventListener("scroll", animateOnScroll);
+        // Déclencher une première fois au chargement
+        animateOnScroll();
+      });
+    </script>
+  </body>
+</html>

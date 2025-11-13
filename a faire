@@ -1,0 +1,20 @@
+REPOT github; https://github.com/zimkha/top-travel
+
+installation de Git
+
+1- check la version de git avec la commande "git version"
+
+apres les commandes a tapés sont les suivante
+git init
+git add .
+
+Quand tu tape la commande git add . il peut te demande de faire des commandes de git config globale
+
+git config --global user.name "ameth"
+git config --global user.email "ndameth221@gmail.com"
+
+git commit -m "first commit"
+
+git remote add origin git@github.com:zimkha/top-travel.git
+
+git push -u origin master

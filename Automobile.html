@@ -1,0 +1,668 @@
+<!DOCTYPE html>Top travel sn
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MA'AWA GROUPE - Véhicules au Sénégal</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="short icon" href="Capture d'écran 2025-10-25 151510.png" />
+    <style>
+      :root {
+        --primary-color: #0056b3;
+        --secondary-color: #ffcc00;
+        --accent-color: #e67e22;
+        --dark-color: #333;
+        --light-color: #f8f9fa;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        padding-top: 80px; /* Pour compenser la navbar fixe */
+      }
+
+      .navbar {
+        background-color: var(--primary-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 24px;
+        color: var(--secondary-color) !important;
+      }
+
+      .navbar-brand span {
+        color: white;
+      }
+
+      .nav-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-weight: 500;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: white !important;
+      }
+
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+        margin-top: -80px; /* Compensation pour la navbar fixe */
+      }
+
+      .section-title {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary-color);
+      }
+
+      .brand-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        height: 100%;
+      }
+
+      .brand-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-img-top {
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-primary:hover {
+        background-color: #004494;
+        border-color: #004494;
+      }
+
+      .btn-warning {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        color: #333;
+      }
+
+      .btn-warning:hover {
+        background-color: #e6b400;
+        border-color: #e6b400;
+      }
+
+      .service-box {
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        margin-bottom: 30px;
+        height: 100%;
+      }
+
+      .service-box:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-icon {
+        font-size: 40px;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .testimonial {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      .testimonial img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+
+      footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .social-icons a {
+        color: white;
+        font-size: 24px;
+        margin-right: 15px;
+        transition: color 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: var(--secondary-color);
+      }
+
+      .bg-light {
+        background-color: #f8f9fa !important;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="TopTravelSn2.html"
+          ><i class="fas fa-car"></i> <span>MA'AWA GROUPE</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#vehicules">Véhicules</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">À propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="display-4 fw-bold mb-4">Vente & Location de Véhicules</h1>
+        <p class="lead mb-4">
+          Découvrez notre sélection premium de véhicules neufs et d'occasion
+        </p>
+        <a href="#vehicules" class="btn btn-warning btn-lg me-2">Découvrir</a>
+        <a href="#contact" class="btn btn-outline-light btn-lg"
+          >Nous contacter</a
+        >
+      </div>
+    </section>
+
+    <!-- Marques de véhicules -->
+    <section id="vehicules" class="py-5">
+      <div class="container">
+        <h2 class="section-title">Nos Marques de Véhicules</h2>
+        <p class="text-center mb-5">
+          Découvrez les marques automobiles disponibles à la vente et à la
+          location
+        </p>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card brand-card">
+              <img
+                src="https://cdn-xy.drivek.com/eyJidWNrZXQiOiJkYXRhay1jZG4teHkiLCJrZXkiOiJjb25maWd1cmF0b3ItaW1ncy9jYXJzL2ZyL29yaWdpbmFsL1RPWU9UQS9SQVY0LVBIRVYvMzk4MjNfU1VWLTUtRE9PUlMvdG95b3RhLXJhdjQtcGhldi0yMDIwLXNpZGUtZnJvbnQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDI0LCJoZWlnaHQiOm51bGwsImZpdCI6ImNvdmVyIn19fQ=="
+                class="card-img-top"
+                alt="Toyota"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Toyota</h5>
+                <p class="card-text">
+                  Leader incontesté au Sénégal. Réputée pour sa robustesse et
+                  son réseau de SAV.
+                </p>
+                <p class="text-muted">
+                  Modèles: Hilux, Land Cruiser, RAV4, Corolla
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card brand-card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWhGroykMD4yMEOAPo0f0sLcHcI6W8-BnQqS2Jqq2u2Em8Ck6-4je9sUE3uI2FovARuyw&usqp=CAU"
+                class="card-img-top"
+                alt="Nissan"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Nissan</h5>
+                <p class="card-text">
+                  Très forte présence, surtout pour les gros 4x4 et pick-ups.
+                </p>
+                <p class="text-muted">
+                  Modèles: Patrol, X-Trail, Navara, Qashqai
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card brand-card">
+              <img
+                src="data:image/jpeg;base64,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"
+                class="card-img-top"
+                alt="Renault"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Renault</h5>
+                <p class="card-text">
+                  Le Duster est un succès phénoménal pour son rapport
+                  qualité/prix.
+                </p>
+                <p class="text-muted">Modèles: Duster, Kwid, Logan, Kangoo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card brand-card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4XBx_3K4p9gz8TmNFEzDTAARrQ1x_5Yt2-Q&s"
+                class="card-img-top"
+                alt="Mercedes"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mercedes-Benz</h5>
+                <p class="card-text">
+                  Présence officielle pour le neuf et l'occasion récente.
+                </p>
+                <p class="text-muted">Modèles: Classe C, GLC, Vito</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card brand-card">
+              <img
+                src="data:image/jpeg;base64,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"
+                class="card-img-top"
+                alt="Peugeot"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Peugeot</h5>
+                <p class="card-text">Marque historique avec une bonne image.</p>
+                <p class="text-muted">Modèles: 208, 2008, 3008, 5008</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card brand-card">
+              <img
+                src="https://www.bavariamotors.be/img/pagebuilders/7.jpg?w=2000&h=%2A&q=90&fit=contain&s=8d35db6d7bd7bd179a69e31d8a1b60ea"
+                class="card-img-top"
+                alt="Autres marques"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Autres marques</h5>
+                <p class="card-text">
+                  Nous proposons également d'autres marques populaires.
+                </p>
+                <p class="text-muted">
+                  Kia, Hyundai, Suzuki, Dacia, Volkswagen
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title">Nos Services</h2>
+        <p class="text-center mb-5">
+          Découvrez tous les services que nous proposons à nos clients
+        </p>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h4>Vente de véhicules neufs</h4>
+              <p>
+                Découvrez notre sélection de véhicules neufs avec garantie
+                constructeur et services inclus.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fas fa-car-side"></i>
+              </div>
+              <h4>Vente de véhicules d'occasion</h4>
+              <p>
+                Large choix de véhicules d'occasion contrôlés et garantis, à
+                prix attractifs.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fas fa-key"></i>
+              </div>
+              <h4>Location longue durée</h4>
+              <p>
+                Formules de location adaptées à vos besoins, pour particuliers
+                et professionnels.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h4>Service après-vente</h4>
+              <p>
+                Atelier équipé et techniciens qualifiés pour l'entretien et la
+                réparation de votre véhicule.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fas fa-file-contract"></i>
+              </div>
+              <h4>Financement</h4>
+              <p>
+                Solutions de financement adaptées avec nos partenaires
+                bancaires.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>Assurance</h4>
+              <p>
+                Conseils et souscription d'assurances auto auprès de nos
+                partenaires.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="section-title">À propos de MA'AWA GROUPE</h2>
+
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Notre histoire</h3>
+            <p>
+              Fondé en 2005, MA'AWA GROUPE s'est imposé comme un acteur majeur
+              dans la vente et la location de véhicules à Dakar et dans tout le
+              Sénégal.
+            </p>
+            <p>
+              Notre mission est de proposer à nos clients une expérience d'achat
+              et de location unique, avec un service personnalisé et des
+              véhicules de qualité.
+            </p>
+            <p>
+              Avec plus de 15 ans d'expérience, nous avons développé un réseau
+              de partenaires solides et diversifiés pour répondre à tous les
+              besoins automobiles.
+            </p>
+          </div>
+
+          <div class="col-md-6">
+            <h3>Nos avantages</h3>
+            <ul class="list-group">
+              <li class="list-group-item border-0">
+                <i class="fas fa-check-circle text-success me-2"></i> Large
+                choix de véhicules neufs et d'occasion
+              </li>
+              <li class="list-group-item border-0">
+                <i class="fas fa-check-circle text-success me-2"></i> Services
+                après-vente de qualité
+              </li>
+              <li class="list-group-item border-0">
+                <i class="fas fa-check-circle text-success me-2"></i> Équipe de
+                professionnels expérimentés
+              </li>
+              <li class="list-group-item border-0">
+                <i class="fas fa-check-circle text-success me-2"></i> Solutions
+                de financement adaptées
+              </li>
+              <li class="list-group-item border-0">
+                <i class="fas fa-check-circle text-success me-2"></i> Assistance
+                7j/7 en cas de besoin
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title">Contactez-nous</h2>
+        <p class="text-center mb-5">
+          Nous sommes à votre disposition pour répondre à toutes vos questions
+        </p>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4 class="card-title">Informations de contact</h4>
+                <p>
+                  <i class="fas fa-map-marker-alt me-2"></i>
+                  <strong>Adresse:</strong> Lac Rose et Les deux voies de
+                  Camberene,Dakar, Sénégal
+                </p>
+                <p>
+                  <i class="fas fa-phone me-2"></i>
+                  <strong>Téléphone:</strong> 77 736 82 67 ; 78 147 62 62 ; 77
+                  610 27 63
+                </p>
+                <p>
+                  <i class="fas fa-envelope me-2"></i>
+                  <strong>Email:</strong> toptravelsn@yahoo.com ;
+                  gwalitop@yahoo.com
+                </p>
+                <p>
+                  <i class="fas fa-clock me-2"></i>
+                  <strong>Horaires:</strong> Lun-Sam: 8h-19h, Dim: 10h-16h
+                </p>
+
+                <div class="mt-4">
+                  <h5>Suivez-nous</h5>
+                  <div class="social-icons">
+                    <a
+                      href="https://www.tiktok.com/@top_travel_sn?_t=ZM-90lpn8DjXtD&_r=1"
+                      target="_blank"
+                      ><i class="fab fa-tiktok"></i
+                    ></a>
+                    <a
+                      href="https://www.instagram.com/toptravelsn?utm_source=qr&igsh=MTJvYTl5NGFzdmkzeg=="
+                      target="_blank"
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+
+                    <a href="https://wa.me/221781476262" target="_blank"
+                      ><i class="fab fa-whatsapp"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4 class="card-title">Envoyez-nous un message</h4>
+                <form
+                  action="mailto:gwalitop@yahoo.com"
+                  method="post"
+                  enctype="text/plain"
+                >
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Nom complet</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Téléphone</label>
+                    <input type="tel" class="form-control" id="phone" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    Envoyer le message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5>MA'AWA GROUPE</h5>
+            <p>
+              Vente et location de véhicules à Dakar, Sénégal. Notre engagement
+              est votre satisfaction.
+            </p>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <h5>Liens rapides</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Accueil</a></li>
+              <li><a href="#vehicules" class="text-white">Véhicules</a></li>
+              <li><a href="#services" class="text-white">Services</a></li>
+              <li><a href="#about" class="text-white">À propos</a></li>
+              <li><a href="#contact" class="text-white">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5>News letter</h5>
+            <p>Inscrivez-vous pour recevoir nos offres exclusives</p>
+            <form
+              action="mailto:gwalitop@yahoo.com"
+              method="post"
+              enctype="text/plain"
+            >
+              <div class="input-group mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Votre email"
+                />
+                <button class="btn btn-warning" type="button">
+                  S'inscrire
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <hr class="mt-4 mb-4" />
+
+        <div class="text-center">
+          <p>&copy; 2025 MA'AWA GROUPE - Tous droits réservés</p>
+          <div class="legal-links">
+            <a href="" style="color: #7f8c8d"
+              >Conditions Générales d'Utilisation (CGU)</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

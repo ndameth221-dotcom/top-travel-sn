@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOP TRAVEL SN - Packages Omra Économique et Confort</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="short icon" href="Capture d'écran 2025-10-25 151510.png" />
+  <style>
+      :root {
+        --primary-color: #0056b3;
+        --secondary-color: #ffcc00;
+        --accent-color: #e67e22;
+        --dark-color: #333;
+        --light-color: #f8f9fa;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        padding-top: 80px; /* Pour compenser la navbar fixe */
+      }
+
+      .navbar {
+        background-color: var(--primary-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 24px;
+        color: white !important;
+      }
+
+      .navbar-brand span {
+        color: white;
+      }
+
+      .nav-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-weight: 500;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: white !important;
+      }
+
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://media.istockphoto.com/id/1513886439/fr/photo/kaaba-la-mecque-m%C3%A9dine-hajj-proph%C3%A8te-muhammad.webp?a=1&b=1&s=612x612&w=0&k=20&c=fk3xmC5_2gAv1G3onh-aR9egw4LyZzutcEiUnicsR-Q=");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+        margin-top: -80px; /* Compensation pour la navbar fixe */
+      }
+
+      .section-title {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .logo i {
+        margin-right: 10px;
+        font-size: 28px;
+        color: var(--secondary-color);
+      }
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary-color);
+      }
+
+      .brand-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        height: 100%;
+      }
+
+      .brand-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-img-top {
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-primary:hover {
+        background-color: #004494;
+        border-color: #004494;
+      }
+
+      .btn-warning {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        color: #333;
+      }
+
+      .btn-warning:hover {
+        background-color: #e6b400;
+        border-color: #e6b400;
+      }
+
+      .service-box {
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        margin-bottom: 30px;
+        height: 100%;
+      }
+
+      .service-box:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-icon {
+        font-size: 40px;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .testimonial {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      .testimonial img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+
+      footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .social-icons a {
+        color: white;
+        font-size: 24px;
+        margin-right: 15px;
+        transition: color 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: var(--secondary-color);
+      }
+
+      .bg-light {
+        background-color: #f8f9fa !important;
+      }
+      
+      .package-tag {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        z-index: 10;
+      }
+      
+      .economique-tag {
+        background-color: var(--primary-color);
+        color: white;
+      }
+      
+      .confort-tag {
+        background-color: var(--secondary-color);
+        color: var(--dark-color);
+      }
+      
+      .price-highlight {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+      
+      .feature-list {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .feature-list li {
+        padding: 5px 0;
+        position: relative;
+        padding-left: 25px;
+      }
+      
+      .feature-list li:before {
+        content: "✓";
+        color: var(--primary-color);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-star-and-crescent"></i><a class="navbar-brand" href="TopTravelSn2.html"><span>TOP TRAVEL SN</span></a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#economique">Économique</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#confort">Confort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h1 class="display-4 mb-4">Votre Omra Spirituelle en Toute Sérénité</h1>
+          <p class="lead mb-4">Des packages économiques et confort pour vivre pleinement votre pèlerinage</p>
+          <a href="#economique" class="btn btn-warning btn-lg me-2">Packages Économiques</a>
+          <a href="#confort" class="btn btn-outline-light btn-lg">Packages Confort</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Économiques Section -->
+  <section id="economique" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Nos Packages Économiques</h2>
+      <p class="text-center mb-5">Des solutions abordables sans compromis sur la qualité spirituelle</p>
+      
+      <div class="row">
+        <!-- Package Économique 1 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card brand-card">
+            <span class="package-tag economique-tag">Économique</span>
+            <img src="https://images.unsplash.com/photo-1693590614566-1d3ea9ef32f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b21yYXxlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="Package Omra Économique">
+            <div class="card-body">
+              <h5 class="card-title">Omra Économique Essentielle</h5>
+              <p class="card-text">Un package complet pour vivre votre pèlerinage en toute simplicité.</p>
+              <ul class="feature-list mb-3">
+                <li>Vol A/R direct Dakar-Médine</li>
+                <li>Hébergement 3★ proche des lieux saints</li>
+                <li>Transferts aéroport-hôtel</li>
+                <li>Assistance francophone</li>
+                <li>Guide spirituel accompagnant</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-highlight">1 850 000 FCFA</span>
+                <a href="#contact" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Package Économique 2 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card brand-card">
+            <span class="package-tag economique-tag">Économique</span>
+            <img src="https://images.unsplash.com/photo-1633546707050-88e2b545831c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b21yYXxlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="Package Omra Économique Plus">
+            <div class="card-body">
+              <h5 class="card-title">Omra Économique Confort</h5>
+              <p class="card-text">Un peu plus de confort pour un pèlerinage serein.</p>
+              <ul class="feature-list mb-3">
+                <li>Vol A/R direct Dakar-Médine</li>
+                <li>Hébergement 4★ à proximité</li>
+                <li>Transferts aéroport-hôtel</li>
+                <li>Petits déjeuners inclus</li>
+                <li>Guide spirituel et assistance 24/7</li>
+                
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-highlight">2 250 000 FCFA</span>
+                <a href="#contact" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Package Économique 3 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card brand-card">
+            <span class="package-tag economique-tag">Économique</span>
+            <img src="https://images.unsplash.com/photo-1511652019870-fbd8713560bf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9tcmF8ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="Package Omra Groupe">
+            <div class="card-body">
+              <h5 class="card-title">Omra Groupe Économique</h5>
+              <p class="card-text">Une expérience communautaire à prix avantageux pour les groupes.</p>
+              <ul class="feature-list mb-3">
+                <li>Vol A/R direct Dakar-Médine</li>
+                <li>Hébergement 3★ en groupe</li>
+                <li>Transferts groupés</li>
+                <li>Encadrement spirituel renforcé</li>
+                <li>Tarif dégressif selon la taille du groupe</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-highlight">1 650 000 FCFA</span>
+                <a href="#contact" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Confort Section -->
+  <section id="confort" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Nos Packages Confort</h2>
+      <p class="text-center mb-5">Pour ceux qui recherchent plus de confort pendant leur pèlerinage</p>
+      
+      <div class="row">
+        <!-- Package Confort 1 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card brand-card">
+            <span class="package-tag confort-tag">Confort</span>
+            <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Package Omra Confort">
+            <div class="card-body">
+              <h5 class="card-title">Omra Confort Privilège</h5>
+              <p class="card-text">Pour ceux qui recherchent le meilleur confort pendant leur pèlerinage.</p>
+              <ul class="feature-list mb-3">
+                <li>Vol A/R direct Dakar-Médine classe économique</li>
+                <li>Hébergement 5★ à proximité immédiate</li>
+                <li>Transferts VIP</li>
+                <li>Repas inclus</li>
+                <li>Guide personnel et assistance premium</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-highlight">2 850 000 FCFA</span>
+                <a href="#contact" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Package Confort 2 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card brand-card">
+            <span class="package-tag confort-tag">Confort</span>
+            <img src="https://images.unsplash.com/photo-1542521148-51306e7ffc1e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D" class="card-img-top" alt="Package Omra Confort Plus">
+            <div class="card-body">
+              <h5 class="card-title">Omra Confort Premium</h5>
+              <p class="card-text">L'expérience ultime pour un pèlerinage inoubliable.</p>
+              <ul class="feature-list mb-3">
+                <li>Vol A/R direct Dakar-Médine classe affaires</li>
+                <li>Hébergement 5★ luxe avec vue sur Haram</li>
+                <li>Transferts limousine</li>
+                <li>Repas gastronomiques inclus</li>
+                <li>Guide personnel, programme spirituel exclusif</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-highlight">3 750 000 FCFA</span>
+                <a href="#contact" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Package Confort 3 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card brand-card">
+            <span class="package-tag confort-tag">Confort</span>
+            <img src="https://images.unsplash.com/photo-1605553378313-22d0dc541393?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D" class="card-img-top" alt="Package Omra Ramadan">
+            <div class="card-body">
+              <h5 class="card-title">Omra Spécial Ramadan</h5>
+              <p class="card-text">Vivez la spiritualité du mois béni dans les lieux saints.</p>
+              <ul class="feature-list mb-3">
+                <li>Vol A/R direct Dakar-Médine</li>
+                <li>Hébergement 4★ proche des mosquées</li>
+                <li>Programme spirituel spécial Ramadan</li>
+                <li>Iftar et Suhur organisés</li>
+                <li>Encadrement par des guides expérimentés</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-highlight">2 950 000 FCFA</span>
+                <a href="#contact" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Nos Services</h2>
+      <p class="text-center mb-5">Nous nous occupons de tout pour que vous puissiez vous concentrer sur votre spiritualité</p>
+      
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-plane"></i>
+            </div>
+            <h4>Vols Directs</h4>
+            <p>Vols directs au départ de Dakar avec les meilleures compagnies aériennes.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-hotel"></i>
+            </div>
+            <h4>Hébergement Qualité</h4>
+            <p>Hôtels sélectionnés pour leur proximité avec les lieux saints et leur confort.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-bus"></i>
+            </div>
+            <h4>Transferts</h4>
+            <p>Transferts organisés entre aéroports, hôtels et lieux saints en véhicules confortables.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h4>Guide Accompaniment</h4>
+            <p>Encadrement par des guides expérimentés parlant français et arabe.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h4>Restauration</h5>
+            <p>Options de restauration adaptées selon le package choisi.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h4>Assistance 24/7</h4>
+            <p>Une équipe locale à votre disposition tout au long de votre séjour.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Pourquoi choisir TOP TRAVEL SN?</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <p class="lead">Forte de 15 ans d'expérience, TOP TRAVEL SN est spécialisée dans l'organisation de pèlerinages Omra au départ du Sénégal.</p>
+          <p>Notre mission est de rendre accessible au plus grand nombre ce voyage spirituel en proposant des packages adaptés à tous les budgets, sans jamais compromettre sur la qualité et le sérieux de l'organisation.</p>
+          <ul class="feature-list">
+            <li>Équipe expérimentée et dévouée</li>
+            <li>Transparence totale sur les prestations</li>
+            <li>Assistance complète avant, pendant et après le voyage</li>
+            <li>Respect des normes et réglementations</li>
+            <li>Accompagnement spirituel de qualité</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1592326871020-04f58c1a52f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVzdWxtYW58ZW58MHx8MHx8fDA%3D" class="img-fluid rounded" alt="Équipe TOP TRAVEL SN">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Témoignages</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="testimonial d-flex">
+            <img src="https://media.istockphoto.com/id/474912698/fr/photo/portrait-dun-homme-noir-africain-dans-une-mosqu%C3%A9e.jpg?s=612x612&w=0&k=20&c=r40EyEvym94HFbNWwMtCSzKV3jKT6JTLEpCVdnQ4KmU=" alt="Client satisfait">
+            <div>
+              <p>"Mon pèlerinage avec TOP TRAVEL SN était exceptionnel. Tout était parfaitement organisé, de la réservation jusqu'au retour. Je recommande vivement!"</p>
+              <h5>Moustapha Diop</h5>
+              <p class="text-muted">Package Confort Privilège - Mars 2023</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="testimonial d-flex">
+            <img src="https://images.pexels.com/photos/32634158/pexels-photo-32634158/free-photo-of-portrait-d-une-belle-femme-musulmane-noire-en-hijab.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Client satisfait">
+            <div>
+              <p>"J'ai choisi le package économique et je suis agréablement surprise de la qualité des services pour ce prix. Un excellent rapport qualité-prix."</p>
+              <h5>Aïcha Ndiaye</h5>
+              <p class="text-muted">Package Économique Essentielle - Janvier 2023</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="testimonial d-flex">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdu_NZFPzGFe_gcau5PXJLFIxYKXFJoxGdjA&s" alt="Client satisfait">
+            <div>
+              <p>"L'encadrement spirituel était remarquable. Le guide était très compétent et a rendu cette expérience encore plus enrichissante."</p>
+              <h5>Omar Sow</h5>
+              <p class="text-muted">Package Spécial Ramadan - Avril 2023</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="testimonial d-flex">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS46zSwD4IFyF5pZ1X4MYGPscuN5MbZwgEcow&s" alt="Client satisfait">
+            <div>
+              <p>"Voyager avec mon groupe de 20 personnes était un vrai plaisir. TOP TRAVEL SN a su s'occuper de tout et nous a offert des tarifs très avantageux."</p>
+              <h5>Fatou Bâ</h5>
+              <p class="text-muted">Package Groupe Économique - Février 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Contactez-nous</h2>
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="card brand-card">
+            <div class="card-body">
+              <h4 class="card-title">Nos coordonnées</h4>
+              <p><i class="fas fa-map-marker-alt me-2"></i>Lac Rose et Deux voies Camberene, Dakar, Sénégal</p>
+              <p><i class="fas fa-phone me-2"></i> +221 777368267 ;+221 781476262 </p>
+              <p><i class="fas fa-envelope me-2"></i> toptravelsn@yahoo.com
+              <hr>
+              <h5>Horaires d'ouverture</h5>
+              <p>Lun - Ven: 8h30 - 18h30</p>
+              <p>Samedi: 9h00 - 13h00</p>
+              <p>Dimanche: Fermé</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="card brand-card">
+            <div class="card-body">
+              <h4 class="card-title">Formulaire de contact</h4>
+              <form action="mailto:gwalitop@yahoo.com" method="post" enctype="text/plain">
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Votre nom complet">
+                </div>
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Votre email">
+                </div>
+                <div class="mb-3">
+                  <input type="tel" class="form-control" placeholder="Votre téléphone">
+                </div>
+                <div class="mb-3">
+                  <select class="form-select">
+                    <option selected>Sélectionnez un package</option>
+                    <option>Omra Économique Essentielle</option>
+                    <option>Omra Économique Confort</option>
+                    <option>Omra Confort Privilège</option>
+                    <option>Omra Confort Premium</option>
+                    <option>Omra Groupe Économique</option>
+                    <option>Omra Spécial Ramadan</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" rows="4" placeholder="Votre message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h4>TOP TRAVEL SN</h4>
+          <p>Votre agence de confiance pour l'organisation de votre pèlerinage Omra depuis le Sénégal.</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/toptravelsn?utm_source=qr&igsh=MTJvYTl5NGFzdmkzeg==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@top_travel_sn?_t=ZM-90lpn8DjXtD&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/221781476262" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <h4>Liens rapides</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Accueil</a></li>
+            <li><a href="#economique" class="text-white">Packages Économiques</a></li>
+            <li><a href="#confort" class="text-white">Packages Confort</a></li>
+            <li><a href="#services" class="text-white">Services</a></li>
+            <li><a href="#about" class="text-white">À propos</a></li>
+            <li><a href="#contact" class="text-white">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-md-4">
+          <h4>Newsletter</h4>
+          <p>Inscrivez-vous pour recevoir nos offres spéciales</p>
+          <form action="mailto:gwalitop@yahoo.com" method="post" enctype="text/plain">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Votre email">
+              <button class="btn btn-warning" type="button">S'inscrire</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <hr class="mt-4 mb-4">
+      
+      <div class="text-center">
+        <p>&copy; 2023 TOP TRAVEL SN - Tous droits réservés</p>
+        <div class="legal-links">
+          <a href="" style="color: #7f8c8d"
+            >Conditions Générales d'Utilisation (CGU)</a
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
